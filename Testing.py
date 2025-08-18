@@ -809,7 +809,7 @@ retrain = False
 single_env = QuadrupedEnv()
 single_env.set_weights(reward_weights, cost_weights)
 obs, info = single_env.reset()
-name = "./Models/Mujoco v 3 2025-08-17_14-18-45"
+name = "./Models/Running_Model_2025-08-18_10-47-08"
 viewer_model = PPO.load(name, env=single_env)
 
 actions = []
