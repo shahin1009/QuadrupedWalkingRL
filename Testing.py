@@ -809,7 +809,9 @@ retrain = False
 single_env = QuadrupedEnv()
 single_env.set_weights(reward_weights, cost_weights)
 obs, info = single_env.reset()
-name = "./Models/Running_Model_2025-08-18_10-47-08"
+# name = "./Models/Mujoco v 3 2025-08-17_14-18-45" #walking
+# name = "./Models/Running_Model_2025-08-18_10-47-08" #trot
+name = "./Models/Running_Model_2025-08-19_20-32-19" #running
 viewer_model = PPO.load(name, env=single_env)
 
 actions = []
@@ -851,4 +853,4 @@ with mujoco.viewer.launch_passive(single_env.model, single_env.data) as viewer:
             time.sleep(time_until_next_step)
 # Save the actions and joint positions to one file
 # np.savez("actions_and_joint_positions.npz", actions=actions, joint_positions=joint_positions)
-single_env.save_animation("quadruped_walk.gif", fps=25)
+# single_env.save_animation("quadruped_running.gif", fps=25)
