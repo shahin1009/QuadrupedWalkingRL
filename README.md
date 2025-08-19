@@ -8,3 +8,7 @@ Walking: For slower walking
 Trot: Faster and more stable
 
 <img src="quadruped_walk_trot.gif" alt="Astar-map1" width="500">
+
+Running:
+
+<img src="quadruped_running.gif" alt="Astar-map1" width="500">

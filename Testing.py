@@ -233,7 +233,8 @@ class QuadrupedEnv(MujocoEnv):
       self.step_counter += 1
       ALPHA = 0.7
       action_filtered = ALPHA * self.prev_action + (1 - ALPHA) * action
-
+      if self.step_counter <1:
+            action_filtered = self._default_joint_position.copy() 
       self.do_simulation(action_filtered, self.frame_skip)
 
       current_obs = self._get_obs()
@@ -853,4 +854,4 @@ with mujoco.viewer.launch_passive(single_env.model, single_env.data) as viewer:
             time.sleep(time_until_next_step)
 # Save the actions and joint positions to one file
 # np.savez("actions_and_joint_positions.npz", actions=actions, joint_positions=joint_positions)
-# single_env.save_animation("quadruped_running.gif", fps=25)
+single_env.save_animation("quadruped_running.gif", fps=25)
